@@ -1,0 +1,7 @@
+[user]
+	name = KuoCH
+	email = Kuo@Mac
+[core]
+  editor = vim
+[credential]
+	helper = osxkeychain
