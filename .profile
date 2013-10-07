@@ -1,3 +1,4 @@
+export TERM=screen-256color
 # Detect OS
 # Darwin stands for OSX
 unamestr=`uname`
@@ -5,10 +6,10 @@ unamestr=`uname`
 # darwin11.0 stands for OSX 10.8
 # some useful export
 if [[ "$unamestr" == 'Darwin' ]]; then
-  export PATH=./:/usr/local/bin:/usr/local/bin/dot:/opt/local/bin:~/project/storm/bin:$PATH
+  export PATH=./:/usr/local/bin:/usr/local/bin/dot:/opt/local/bin:~/project/storm/bin:~/bin:$PATH
   [ -d /usr/local/share/python ] && PATH=/usr/local/share/python:$PATH
   export PYTHON_PLUGINS=/usr/local/lib/python2.7/site-packages/
-elif [[ "unamestr" == 'Darwin' ]]; then
+elif [[ "$unamestr" == 'Linux' ]]; then
   export PATH=./:/usr/local/bin:/usr/local/bin/dot:/opt/local/bin:/usr/share/zookeeper/bin/:$PATH
   export JAVA_HOME=/usr/lib/jvm/java-7-oracle
 fi
@@ -91,5 +92,9 @@ fi
 export TERM=screen-256color
 
 # Uncomment this to run tmux automatically when opening a terminal
-command -v tmux >/dev/null && [ -z "$TMUX" ] && ( tmux ls >/dev/null && tmux attach || tmux new ) && exit
+command -v tmux >/dev/null && [ -z "$TMUX" ] && ( tmux ls >/dev/null && tmux attach || tmux new)  && exit
 
+if [[ "$unamestr" == 'Darwin' ]]; then
+command -v tmux >/dev/null && [ -n "$TMUX" ] && tmux source-file ~/.tmux-osx.conf
+# elif [[ "$unamestr" == 'Linux' ]]; then
+fi
