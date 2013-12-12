@@ -98,3 +98,6 @@ if [[ "$unamestr" == 'Darwin' ]]; then
 command -v tmux >/dev/null && [ -n "$TMUX" ] && tmux source-file ~/.tmux-osx.conf
 # elif [[ "$unamestr" == 'Linux' ]]; then
 fi
+
+# Vi mode
+#bindkey -v
