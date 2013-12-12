@@ -14,7 +14,7 @@ elif [[ "$unamestr" == 'Linux' ]]; then
   export JAVA_HOME=/usr/lib/jvm/java-7-oracle
 fi
 
-export _JAVA_OPTIONS=-Xmx24g
+export _JAVA_OPTIONS=-Xmx1024m
 
 # some useful alias
 if [[ "$unamestr" == 'Darwin' ]]; then
