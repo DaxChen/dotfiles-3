@@ -11,7 +11,7 @@ if [[ "$unamestr" == 'Darwin' ]]; then
   export PYTHON_PLUGINS=/usr/local/lib/python2.7/site-packages/
 elif [[ "$unamestr" == 'Linux' ]]; then
   export PATH=./:/usr/local/bin:/usr/local/bin/dot:/opt/local/bin:/usr/share/zookeeper/bin/:$PATH
-  export JAVA_HOME=/usr/lib/jvm/java-7-oracle
+  export JAVA_HOME=/usr/lib/jvm/java-6-oracle
 fi
 
 export _JAVA_OPTIONS=-Xmx1024m
