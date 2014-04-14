@@ -72,21 +72,21 @@ git_branch() {
   echo "[$branchName$dirty]"
 }
 
+# Since tmux runs automatically when opening a terminal, it doesn't need to show thess message
 # Show info when tmux is running
 # If tmux is installed
-if command -v tmux >/dev/null 2>&1; then
-  # If outside tmux, and there exists some tmux session
-  if [ -z "$TMUX" ]; then
-    TMUX_LIST=$(tmux ls 2>/dev/null)
-    if [ "$TMUX_LIST" ]; then
-      echo
-      echo '   There are some tmux sessions running in the background:'
-      echo "$TMUX_LIST" | sed 's/^/   /'
-      echo
-    fi
-  fi
-fi
-
+#   if command -v tmux >/dev/null 2>&1; then
+#     # If outside tmux, and there exists some tmux session
+#     if [ -z "$TMUX" ]; then
+#       TMUX_LIST=$(tmux ls 2>/dev/null)
+#       if [ "$TMUX_LIST" ]; then
+#         echo
+#         echo '   There are some tmux sessions running in the background:'
+#         echo "$TMUX_LIST" | sed 's/^/   /'
+#         echo
+#       fi
+#     fi
+#   fi
 
 # Let tmux correctly show 256 colors
 export TERM=screen-256color
@@ -95,7 +95,7 @@ export TERM=screen-256color
 command -v tmux >/dev/null && [ -z "$TMUX" ] && ( tmux ls >/dev/null && tmux attach || tmux new) && exit
 
 if [[ "$unamestr" == 'Darwin' ]]; then
-command -v tmux >/dev/null && [ -n "$TMUX" ] && tmux source-file ~/.tmux-osx.conf
+  command -v tmux >/dev/null && [ -n "$TMUX" ] && tmux source-file ~/.tmux-osx.conf
 # elif [[ "$unamestr" == 'Linux' ]]; then
 fi
 
