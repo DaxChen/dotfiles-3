@@ -6,11 +6,11 @@ unamestr=`uname`
 # darwin11.0 stands for OSX 10.8
 # some useful export
 if [[ "$unamestr" == 'Darwin' ]]; then
-  export PATH=./:/usr/local/bin:/usr/local/bin/dot:/opt/local/bin:~/project/storm/bin:~/bin:$PATH
+  export PATH=.:/usr/local/bin:/usr/local/bin/dot:/opt/local/bin:~/project/storm/bin:~/bin:$PATH
   [ -d /usr/local/share/python ] && PATH=/usr/local/share/python:$PATH
   export PYTHON_PLUGINS=/usr/local/lib/python2.7/site-packages/
 elif [[ "$unamestr" == 'Linux' ]]; then
-  export PATH=./:/usr/local/bin:/usr/local/bin/dot:/opt/local/bin:/usr/share/zookeeper/bin/:$PATH
+  export PATH=.:/usr/local/bin:/usr/local/bin/dot:/opt/local/bin:/usr/share/zookeeper/bin:$PATH
   export JAVA_HOME=/usr/lib/jvm/java-6-oracle
 fi
 
