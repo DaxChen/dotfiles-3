@@ -1,0 +1,31 @@
+Setting of Karabiner(Keyremap4macbook)
+Mainly for external keyboard:Filco Ninja
+From win-layout to mac-layout
+One setting for internal keyboard
+
+HOWTO:
+  Install Karabiner (https://pqrs.org/osx/karabiner/)
+  cp ~/dotfiles/private.xml ~/Library/Application\ Support/Karabiner
+  press buttom ReloadXML on Karabiner preference
+  toggle "My Private Setting For Filco", "My Private Setting For Internal Keyboard", "Control_L to Control_L(+When you type Control_L only send Escape)"
+
+Misc:
+  remember to modify key Repeat
+    Delay Until Repeat 100ms
+    Key Repeat          10ms
+  Cap-> Ctrl-L:
+    In System Preference->Keyboard->Modifier Keys, change "Caps" to "Ctrl" for both keyboards
+
+Main settings:
+  For Filco Ninja Keyboard
+    map application key to fn key
+    switch option keys and command keys
+    function keys for special features
+    fn + function key for original function keys(F1, F2, etc)
+  For Internal Keyboard
+    option right to control right
+
+Reference:
+  Karabiner (https://pqrs.org/osx/karabiner/)
+  KeyCode https://github.com/tekezo/KeyRemap4MacBook/blob/version_8.0.0/src/bridge/generator/keycode/data/KeyCode.data
+  ConsumerKeyCode https://github.com/tekezo/KeyRemap4MacBook/blob/version_8.0.0/src/bridge/generator/keycode/data/ConsumerKeyCode.data

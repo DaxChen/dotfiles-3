@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<root>
+  <!-- Filco is a prepared vender in keyremap4macbook~
+    <devicevendordef>
+      <vendorname>FILCO</vendorname>
+      <vendorid>0x04d9</vendorid>
+    </devicevendordef>
+  -->
+
+  <deviceproductdef>
+    <productname>FILCO_NINJA</productname>
+    <productid>0x1818</productid>
+  </deviceproductdef>
+
+  <deviceproductdef>
+    <productname>APPLE_INTERNAL_KEYBOARD_TRACKPAD_0x024c</productname>
+    <productid>0x024c</productid>
+  </deviceproductdef>
+
+  <item>
+    <name>My Private Setting For Filco</name>
+    <item>
+      <name>Function Keys</name>
+      <device_only>DeviceVendor::FILCO,DeviceProduct::FILCO_NINJA</device_only>
+      <identifier>private.filco_function_keys</identifier>
+      <autogen>--KeyToKey-- KeyCode::F1, ModifierFlag::FN, KeyCode::F1</autogen>
+      <autogen>--KeyToKey-- KeyCode::F2, ModifierFlag::FN, KeyCode::F2</autogen>
+      <autogen>--KeyToKey-- KeyCode::F3, ModifierFlag::FN, KeyCode::F3</autogen>
+      <autogen>--KeyToKey-- KeyCode::F4, ModifierFlag::FN, KeyCode::F4</autogen>
+      <autogen>--KeyToKey-- KeyCode::F5, ModifierFlag::FN, KeyCode::F5</autogen>
+      <autogen>--KeyToKey-- KeyCode::F6, ModifierFlag::FN, KeyCode::F6</autogen>
+      <autogen>--KeyToKey-- KeyCode::F7, ModifierFlag::FN, KeyCode::F7</autogen>
+      <autogen>--KeyToKey-- KeyCode::F8, ModifierFlag::FN, KeyCode::F8</autogen>
+      <autogen>--KeyToKey-- KeyCode::F9, ModifierFlag::FN, KeyCode::F9</autogen>
+      <autogen>--KeyToKey-- KeyCode::F10, ModifierFlag::FN, KeyCode::F10</autogen>
+      <autogen>--KeyToKey-- KeyCode::F11, ModifierFlag::FN, KeyCode::F11</autogen>
+      <autogen>--KeyToKey-- KeyCode::F12, ModifierFlag::FN, KeyCode::F12</autogen>
+      <autogen>--KeyToConsumer-- KeyCode::F1, ConsumerKeyCode::BRIGHTNESS_DOWN</autogen>
+      <autogen>--KeyToConsumer-- KeyCode::F2, ConsumerKeyCode::BRIGHTNESS_UP</autogen>
+      <autogen>--KeyToKey-- KeyCode::F3, KeyCode::MISSION_CONTROL</autogen>
+      <autogen>--KeyToKey-- KeyCode::F4, KeyCode::LAUNCHPAD</autogen>
+      <autogen>--KeyToConsumer-- KeyCode::F5, ConsumerKeyCode::KEYBOARDLIGHT_LOW</autogen>
+      <autogen>--KeyToConsumer-- KeyCode::F6, ConsumerKeyCode::KEYBOARDLIGHT_HIGH</autogen>
+      <autogen>--KeyToConsumer-- KeyCode::F7, ConsumerKeyCode::MUSIC_PREV</autogen>
+      <autogen>--KeyToConsumer-- KeyCode::F8, ConsumerKeyCode::MUSIC_PLAY</autogen>
+      <autogen>--KeyToConsumer-- KeyCode::F9, ConsumerKeyCode::MUSIC_NEXT</autogen>
+      <autogen>--KeyToConsumer-- KeyCode::F10, ConsumerKeyCode::VOLUME_MUTE</autogen>
+      <autogen>--KeyToConsumer-- KeyCode::F11, ConsumerKeyCode::VOLUME_DOWN</autogen>
+      <autogen>--KeyToConsumer-- KeyCode::F12, ConsumerKeyCode::VOLUME_UP</autogen>
+    </item>
+    <item>
+      <name>Modifier Keys</name>
+      <device_only>DeviceVendor::FILCO,DeviceProduct::FILCO_NINJA</device_only>
+      <identifier>private.filco_modifier_keys</identifier>
+      <autogen>--KeyToKey-- KeyCode::PC_APPLICATION, KeyCode::FN</autogen>
+      <autogen>--KeyToKey-- KeyCode::COMMAND_L, KeyCode::OPTION_L</autogen>
+      <autogen>--KeyToKey-- KeyCode::OPTION_L, KeyCode::COMMAND_L</autogen>
+      <autogen>--KeyToKey-- KeyCode::COMMAND_R, KeyCode::OPTION_R</autogen>
+      <autogen>--KeyToKey-- KeyCode::OPTION_R, KeyCode::COMMAND_R</autogen>
+    </item>
+  </item>
+
+  <item>
+    <name>My Private Setting For Internal Keyboard</name>
+    <item>
+      <name>Modifier Keys</name>
+      <device_only>DeviceVendor::APPLE_INC,DeviceProduct::APPLE_INTERNAL_KEYBOARD_TRACKPAD_0x024c</device_only>
+      <identifier>private.internal_modifier_keys</identifier>
+      <autogen>--KeyToKey-- KeyCode::OPTION_R, KeyCode::CONTROL_R</autogen>
+    </item>
+  </item>
+
+</root>

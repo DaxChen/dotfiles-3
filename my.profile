@@ -30,7 +30,7 @@ fi
 
 alias gll="git log --graph --all --oneline --decorate --color"
 
-source ~/.color.sh
+source ~/dotfiles/color.sh
 
 if [[ "$unamestr" == 'Darwin' ]]; then
   HOSTNAME='MacbookAir'
@@ -93,9 +93,9 @@ export TERM=screen-256color
 
 # Uncomment this to run tmux automatically when opening a terminal
 command -v tmux >/dev/null && [ -z "$TMUX" ] && ( tmux ls >/dev/null && tmux attach || tmux new) && exit
-
+command -v tmux >/dev/null && [ -n "$TMUX" ] && tmux source-file ~/dotfiles/tmux.conf
 if [[ "$unamestr" == 'Darwin' ]]; then
-  command -v tmux >/dev/null && [ -n "$TMUX" ] && tmux source-file ~/.tmux-osx.conf
+  command -v tmux >/dev/null && [ -n "$TMUX" ] && tmux source-file ~/dotfiles/tmux-osx.conf
 # elif [[ "$unamestr" == 'Linux' ]]; then
 fi
 
