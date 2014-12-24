@@ -6,4 +6,4 @@
 #  Chia-Hans-Air:~ Kuo$ bash
 #  bashrc
 #  bash-3.2$ bash
-source ~/dotfiles/my.profile
+source ~/dotfiles/non-login-shell.profile

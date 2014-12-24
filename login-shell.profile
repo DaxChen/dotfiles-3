@@ -1,34 +1,20 @@
-export TERM=screen-256color
+source ~/dotfiles/general.profile
 # Detect OS
 # Darwin stands for OSX
-unamestr=`uname`
+export unamestr=`uname`
 # or we can use $OSTYPE directly
 # darwin11.0 stands for OSX 10.8
 # some useful export
 if [[ "$unamestr" == 'Darwin' ]]; then
-  export PATH=.:/usr/local/bin:/usr/local/bin/dot:/opt/local/bin:~/project/storm/bin:~/bin:$PATH
-  [ -d /usr/local/share/python ] && PATH=/usr/local/share/python:$PATH
+  #for basictex
+  [ -d /usr/local/share/python ] && export PATH=/usr/texbin:"$PATH"
+  #for python
+  [ -d /usr/local/share/python ] && export PATH=/usr/local/share/python:$PATH
   export PYTHON_PLUGINS=/usr/local/lib/python2.7/site-packages/
+  export PATH=.:$PATH
 elif [[ "$unamestr" == 'Linux' ]]; then
-  export PATH=.:/usr/local/bin:/usr/local/bin/dot:/opt/local/bin:/usr/share/zookeeper/bin:$PATH
-  export JAVA_HOME=/usr/lib/jvm/java-6-oracle
+  export PATH=.:$PATH
 fi
-
-export _JAVA_OPTIONS=-Xmx1024m
-
-# some useful alias
-if [[ "$unamestr" == 'Darwin' ]]; then
-  alias ls="ls -aG"
-  alias ll="ls -alh"
-  alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
-  alias matlab='/Applications/MATLAB_R2011b.app/Contents/MacOS/StartMATLAB'
-  alias lock='/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend'
-elif [[ "$unamestr" == 'Linux' ]]; then
-  alias ls="ls -a --color"
-  alias ll="ls -alh"
-fi
-
-alias gll="git log --graph --all --oneline --decorate --color"
 
 source ~/dotfiles/color.sh
 
@@ -98,6 +84,3 @@ if [[ "$unamestr" == 'Darwin' ]]; then
   command -v tmux >/dev/null && [ -n "$TMUX" ] && tmux source-file ~/dotfiles/tmux-osx.conf
 # elif [[ "$unamestr" == 'Linux' ]]; then
 fi
-
-# Vi mode
-#bindkey -v
