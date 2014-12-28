@@ -7,7 +7,7 @@ export unamestr=`uname`
 # some useful export
 if [[ "$unamestr" == 'Darwin' ]]; then
   #for basictex
-  [ -d /usr/local/share/python ] && export PATH=/usr/texbin:"$PATH"
+  [ -d /usr/texbin ] && export PATH=/usr/texbin:"$PATH"
   #for python
   [ -d /usr/local/share/python ] && export PATH=/usr/local/share/python:$PATH
   export PYTHON_PLUGINS=/usr/local/lib/python2.7/site-packages/
@@ -23,7 +23,7 @@ if [[ "$unamestr" == 'Darwin' ]]; then
 fi
 
 # customize the command line prompt
-multiline() {
+pre_prompt() {
   # uncomment this line only when using bash
   if [ "$WINDOW" != "" ]; then
     printf "\n$bldcyn%s@%s[%d]" "${USER}" "`hostname`" "$WINDOW"
@@ -31,12 +31,6 @@ multiline() {
     printf "\n$bldcyn%s@%s" "${USER}" "`hostname`"
   fi
   printf "$txtblk:$bldylw%s$txtrst " "${PWD/#$HOME/~}"
-}
-
-## on-my-zsh
-PROMPT='$(git_branch)%{$reset_color%}→ '
-precmd() {
-  print -rP '$(multiline)' 
 }
 
 git_branch() {
@@ -55,7 +49,22 @@ git_branch() {
   [ -n "`git ls-files --others --exclude-standard 2>/dev/null`" ] && \
     dirty=$dirty'?'
 
-  echo "[$branchName$dirty]"
+  echo -n "[$branchName$dirty]"
+}
+
+## zsh
+#PROMPT='$(git_branch)%{$reset_color%}→ '
+#precmd() {
+#  print -rP '$(pre_prompt)' 
+#}
+
+##bash
+PROMPT_COMMAND='prompt_gen'
+PS1="→ "
+prompt_gen() {
+  pre_prompt
+  echo
+  git_branch
 }
 
 # Since tmux runs automatically when opening a terminal, it doesn't need to show thess message
