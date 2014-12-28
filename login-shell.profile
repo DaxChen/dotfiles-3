@@ -43,6 +43,7 @@ git_branch() {
   [ $branchName = 'HEAD' ] && branchName='unknown'
 
   # Check if there is unstaged change to tracked files
+  dirty=''
   git diff --quiet 2>/dev/null || dirty='±'
 
   # Check if there is untracked files
