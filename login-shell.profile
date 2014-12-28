@@ -61,11 +61,11 @@ git_branch() {
 
 ##bash
 PROMPT_COMMAND='prompt_gen'
-PS1="→ "
+PS1="$(git_branch)→ "
 prompt_gen() {
   pre_prompt
   echo
-  git_branch
+  PS1="$(git_branch)→ "
 }
 
 # Since tmux runs automatically when opening a terminal, it doesn't need to show thess message
