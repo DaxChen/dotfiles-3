@@ -1,4 +1,5 @@
 # some useful alias
+export unamestr=`uname`
 if [[ "$unamestr" == 'Darwin' ]]; then
   alias ls="ls -aG"
   alias ll="ls -alh"
