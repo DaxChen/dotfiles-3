@@ -3,6 +3,7 @@
 	email = Kuo@Mac
 [core]
   editor = vim
+  excludesfile = ~/dotfiles/global.gitignore
 [credential]
 	helper = osxkeychain
 [color]
