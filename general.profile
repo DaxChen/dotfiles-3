@@ -10,5 +10,5 @@ elif [[ "$unamestr" == 'Linux' ]]; then
   alias ll="ls -alh"
 fi
 
-alias gll="git log --graph --all --oneline --decorate --color"
-
+alias gll="git log --graph --all --pretty=format:\"%C(auto)%w(78,0,8)%h%d %s\" --date=local"
+alias glv="git log --graph --all --pretty=format:\"%C(auto)%h%d%n  %Cgreen%ad %Cblue%an%n%w(76,4,2)%s\" --date=local"
