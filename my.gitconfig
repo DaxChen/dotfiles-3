@@ -1,0 +1,12 @@
+[user]
+	name = KuoCH
+	email = Kuo@Mac
+[core]
+    editor = vim
+    excludesfile = ~/dotfiles/global.gitignore
+[credential]
+	helper = osxkeychain
+[color]
+	ui = auto
+[push]
+	default = current
