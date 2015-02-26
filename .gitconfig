@@ -1,2 +1,2 @@
 [include]
-  path = ~/dotfiles/my.gitconfig
+  path = ~/dotfiles/git.config
