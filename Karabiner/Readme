@@ -5,9 +5,12 @@ One setting for internal keyboard
 
 HOWTO:
   Install Karabiner (https://pqrs.org/osx/karabiner/)
-  cp ~/dotfiles/private.xml ~/Library/Application\ Support/Karabiner
+  cp ~/dotfiles/Karabiner/private.xml ~/Library/Application\ Support/Karabiner
   press buttom ReloadXML on Karabiner preference
-  toggle "My Private Setting For Filco", "My Private Setting For Internal Keyboard", "Control_L to Control_L(+When you type Control_L only send Escape)"
+  toggle:
+    "My Private Setting For Filco"
+    "My Private Setting For Internal Keyboard"
+    "Control_L to Control_L(+When you type Control_L only send Escape)"
 
 Misc:
   remember to modify key Repeat

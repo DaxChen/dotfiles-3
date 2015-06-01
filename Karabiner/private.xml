@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <root>
-  <!-- Filco is a prepared vender in keyremap4macbook~
+  <!-- Filco is a prepared vender in Karabiner
     <devicevendordef>
       <vendorname>FILCO</vendorname>
       <vendorid>0x04d9</vendorid>
@@ -12,9 +12,17 @@
     <productid>0x1818</productid>
   </deviceproductdef>
 
+  <!-- These two devices are prepared devices in Karabiner
+       However, it's still needed to set these two def
+  -->
   <deviceproductdef>
     <productname>APPLE_INTERNAL_KEYBOARD_TRACKPAD_0x024c</productname>
     <productid>0x024c</productid>
+  </deviceproductdef>
+
+  <deviceproductdef>
+    <productname>APPLE_WIRELESS_KEYBOARD_0x0255</productname>
+    <productid>0x0255</productid>
   </deviceproductdef>
 
   <item>
@@ -64,7 +72,10 @@
     <name>My Private Setting For Internal Keyboard</name>
     <item>
       <name>Modifier Keys</name>
-      <device_only>DeviceVendor::APPLE_INC,DeviceProduct::APPLE_INTERNAL_KEYBOARD_TRACKPAD_0x024c</device_only>
+      <device_only>
+        DeviceVendor::APPLE_INC,DeviceProduct::APPLE_INTERNAL_KEYBOARD_TRACKPAD_0x024c,
+        DeviceVendor::APPLE_INC,DeviceProduct::APPLE_WIRELESS_KEYBOARD_0x0255,
+      </device_only>
       <identifier>private.internal_modifier_keys</identifier>
       <autogen>--KeyToKey-- KeyCode::OPTION_R, KeyCode::CONTROL_R</autogen>
     </item>
