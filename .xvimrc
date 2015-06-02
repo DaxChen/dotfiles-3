@@ -1,0 +1,32 @@
+" Set system clipboard as the default register
+set clipboard=unnamed
+" Virtually editing in visual block mode
+set virtualedit=block
+" Show keystroke of the (partial) command
+set showcmd
+" Don't wait when I click esc
+set ttimeoutlen=0
+
+" ==========================================================================
+" Searching
+" Highlight search results
+set hlsearch
+" Search for each typing
+set incsearch
+" Ignore case when searching
+" Tip: use \c in patterns can ignore case, \C force matching case for whole pattern
+set ignorecase
+" Smartcase only ignore case when letters are capitals of words (need 'set ignorecase')
+set smartcase
+
+
+
+" ==========================================================================
+" Split screen settings
+" Alias shortcuts for navigations betweem split windows
+nnoremap <c-h> <c-w>h
+nnoremap <c-l> <c-w>l
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-q> <c-w>q
+
