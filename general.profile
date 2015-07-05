@@ -3,7 +3,7 @@ export unamestr=`uname`
 if [[ "$unamestr" == 'Darwin' ]]; then
   alias ls="ls -aG"
   alias ll="ls -alh"
-  alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
+  alias vim='~/Applications/MacVim.app/Contents/MacOS/Vim'
   alias lock='/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend'
 elif [[ "$unamestr" == 'Linux' ]]; then
   alias ls="ls -a --color"
