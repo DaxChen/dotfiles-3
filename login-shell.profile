@@ -88,9 +88,30 @@ prompt_gen() {
 export TERM=screen-256color
 
 # Uncomment this to run tmux automatically when opening a terminal
-command -v tmux >/dev/null && [ -z "$TMUX" ] && ( tmux ls >/dev/null && tmux attach || tmux new) && exit
-command -v tmux >/dev/null && [ -n "$TMUX" ] && tmux source-file ~/dotfiles/tmux.conf
-if [[ "$unamestr" == 'Darwin' ]]; then
-  command -v tmux >/dev/null && [ -n "$TMUX" ] && tmux source-file ~/dotfiles/tmux-osx.conf
-# elif [[ "$unamestr" == 'Linux' ]]; then
-fi
+command -v tmux >/dev/null &&
+  if [[ -z "$TMUX" ]]; then
+    # echo "Out of tmux"
+    AUTO_TMUX=""
+    printf "Should attach tmux? (y)\n"
+    read -t 1 AUTO_TMUX;
+    if [[ "$AUTO_TMUX" == "" || "$AUTO_TMUX" == "y" ]]; then
+      printf "Attach!\n"
+      ( tmux ls >/dev/null && tmux attach || tmux new)
+    else
+      printf "Not attch because you input: $AUTO_TMUX\n"
+    fi
+  else
+    # echo "In tmux"
+    tmux source-file ~/dotfiles/tmux.conf
+    if [[ "$unamestr" == 'Darwin' ]]; then
+      tmux source-file ~/dotfiles/tmux-osx.conf
+    # elif [[ "$unamestr" == 'Linux' ]]; then
+    fi
+  fi
+
+# command -v tmux >/dev/null && [ -z "$TMUX" ] && ( tmux ls >/dev/null && tmux attach || tmux new) && exit
+# command -v tmux >/dev/null && [ -n "$TMUX" ] && tmux source-file ~/dotfiles/tmux.conf
+# if [[ "$unamestr" == 'Darwin' ]]; then
+#   command -v tmux >/dev/null && [ -n "$TMUX" ] && tmux source-file ~/dotfiles/tmux-osx.conf
+# # elif [[ "$unamestr" == 'Linux' ]]; then
+# fi
